@@ -3,18 +3,25 @@ import {
     Text, View, StyleSheet, TextInput, TouchableOpacity
 } from 'react-native';
 
+
 import Card from '../components/Card';
 import BottomBar from '../components/BottomBar';
 
 
 
-
 const HomeScreen = () => {
+
+
+
     return (
         <View style={styles.container}>
+
             <View style={styles.swipes}>
+
                 <Card />
+
             </View>
+
             <BottomBar />
         </View>
     )

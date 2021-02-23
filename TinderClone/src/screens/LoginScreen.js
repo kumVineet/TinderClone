@@ -2,18 +2,26 @@ import React from 'react';
 import {
     Text, View, StyleSheet, TextInput, TouchableOpacity
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import Ionicons from "react-native-vector-icons/Ionicons";
 Ionicons.loadFont();
 
 
 const LoginScreen = () => {
+
+    const navigation = useNavigation();
+
     return (
-        <View>
+        <View style={{ flex: 1, backgroundColor: 'white' }}>
             <View style={styles.back}>
-                <Ionicons
-                    name="chevron-back-circle-outline"
-                    size={45}
-                    color="#fe3c72" />
+                <TouchableOpacity
+                    onPress={() => navigation.navigate("Splash")}
+                >
+                    <Ionicons
+                        name="chevron-back-circle-outline"
+                        size={45}
+                        color="#fe3c72" />
+                </TouchableOpacity>
             </View>
 
             <Text style={styles.text}>My Number is</Text>
@@ -47,7 +55,9 @@ const LoginScreen = () => {
                     Learn what happens when your number changes.</Text>
             </View>
 
-            <TouchableOpacity style={styles.logIn}>
+            <TouchableOpacity
+                style={styles.logIn}
+                onPress={() => navigation.navigate("RootScreen")}>
                 <View>
                     <Text style={styles.buttonText}>CONTINUE</Text>
                 </View>

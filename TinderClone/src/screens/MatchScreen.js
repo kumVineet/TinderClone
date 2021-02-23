@@ -10,7 +10,7 @@ import Minicard from '../components/Minicard';
 
 const MatchScreen = () => {
     return (
-        <View style={{ backgroundColor: 'white' }}>
+        <View style={{ flex: 1, backgroundColor: 'white' }}>
             <View style={styles.search}>
                 <Ionicons name="search" size={28} color="#fe3c72" />
                 <View style={styles.textInput}>

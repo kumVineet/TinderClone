@@ -2,18 +2,24 @@ import React from 'react';
 import {
     Text, View, StyleSheet, TextInput, TouchableOpacity
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import Ionicons from "react-native-vector-icons/Ionicons";
 Ionicons.loadFont();
 
 
 const AccRecovery = () => {
+
+    const navigation = useNavigation();
+
     return (
-        <View>
+        <View style={{ flex: 1, backgroundColor: 'white' }}>
             <View style={styles.back}>
-                <Ionicons
-                    name="chevron-back-circle-outline"
-                    size={45}
-                    color="#fe3c72" />
+                <TouchableOpacity onPress={() => navigation.navigate("Splash")}>
+                    <Ionicons
+                        name="chevron-back-circle-outline"
+                        size={45}
+                        color="#fe3c72" />
+                </TouchableOpacity>
             </View>
 
             <Text style={styles.text1}>Account Recovery</Text>

@@ -1,10 +1,14 @@
 import React from 'react'
-import { StyleSheet, Image, View, Text } from 'react-native';
+import { StyleSheet, Image, View, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 FontAwesome.loadFont();
 
 
 const Card = () => {
+
+    const navigation = useNavigation();
+
     return (
         <View>
             <Image
@@ -13,14 +17,29 @@ const Card = () => {
             />
             <View style={styles.textContainer}>
                 <View style={styles.textRow}>
-                    <Text style={[styles.textPrimary, styles.textShadow]}>Remy_Loz</Text>
-                    <Text style={[styles.textSecondary, styles.textShadow]}> 24</Text>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate("About")}
+                    >
+                        <Text style={[styles.textPrimary, styles.textShadow]}>Remy_Loz</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate("About")}
+                    >
+                        <Text style={[styles.textSecondary, styles.textShadow]}> 24</Text>
+                    </TouchableOpacity>
+
+
                 </View>
 
                 <View style={styles.textRow}>
                     <FontAwesome name="map-marker" size={20} color="white"></FontAwesome>
-                    <Text style={[styles.textSecondary, styles.textShadow]}>22 miles away</Text>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate("About")}
+                    >
+                        <Text style={[styles.textSecondary, styles.textShadow]}>22 miles away</Text>
+                    </TouchableOpacity>
                 </View>
+
             </View>
         </View>
     )

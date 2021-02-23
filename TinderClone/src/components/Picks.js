@@ -124,7 +124,7 @@ const Picks = () => {
             </View>
 
             <TouchableOpacity
-                onPress={() => alert("Get Tinder Gold")}>
+                onPress={() => alert("GET TINDER GOLD")}>
                 <View style={styles.button}>
                     <Text
                         style={{ color: 'white', fontWeight: 'bold', fontSize: 20 }}

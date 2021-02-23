@@ -5,7 +5,7 @@ import {
 
 const Like = () => {
     return (
-        <View style={{ backgroundColor: 'white' }}>
+        <View style={{ flex: 1, backgroundColor: 'white' }}>
             <View style={styles.text}>
                 <Text
                     style={{ fontSize: 18, fontWeight: '400' }}
@@ -72,7 +72,7 @@ const Like = () => {
             </View>
 
             <TouchableOpacity
-                onPress={() => alert("Get Tinder Gold")}>
+                onPress={() => alert("GET TINDER GOLD")}>
                 <View style={styles.button}>
                     <Text
                         style={{ color: 'white', fontWeight: 'bold', fontSize: 20 }}

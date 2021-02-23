@@ -11,21 +11,27 @@ const BottomBar = () => {
     return (
         <View style={styles.container}>
             <View />
+
             <TouchableOpacity style={styles.button1}>
                 <FontAwesome name="undo" size={25} color="grey" />
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.button2} >
                 <FontAwesome name="times" size={40} color="#F06795"></FontAwesome>
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.button1}>
                 <FontAwesome name="star" size={25} color="blue" />
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.button2}>
                 <FontAwesome name="heart" size={35} color="#64EDCC" ></FontAwesome>
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.button1}>
                 <MaterialCommunityIcons name="lightning-bolt" size={25} color="purple" />
             </TouchableOpacity>
+
             <View />
         </View>
     )
@@ -57,10 +63,10 @@ const styles = StyleSheet.create({
         elevation: 9,
     },
     button2: {
-        width: 70,
-        height: 70,
+        width: 64,
+        height: 64,
         backgroundColor: 'white',
-        borderRadius: 35,
+        borderRadius: 32,
         justifyContent: 'center',
         alignItems: 'center',
         shadowColor: '#000',

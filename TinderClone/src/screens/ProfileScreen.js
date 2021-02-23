@@ -2,7 +2,7 @@ import React from 'react';
 import {
     Text, View, StyleSheet, Image, TouchableOpacity
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { useNavigation } from '@react-navigation/native';
 
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 MaterialIcons.loadFont();
@@ -16,8 +16,11 @@ Ionicons.loadFont();
 
 
 const ProfileScreen = () => {
+
+    const navigation = useNavigation();
+
     return (
-        <View style={{ backgroundColor: 'white' }}>
+        <View style={{ flex: 1, backgroundColor: 'white' }}>
             <Image
                 source={{ uri: 'https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8d29tYW58ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' }}
                 style={styles.profileImage} />
@@ -53,7 +56,9 @@ const ProfileScreen = () => {
 
             </View>
 
-            <TouchableOpacity style={styles.plus}>
+            <TouchableOpacity
+                style={styles.plus}
+                onPress={() => navigation.navigate("Splash")}>
                 <View >
                     <Text
                         style={{ fontWeight: 'bold', fontSize: 22, color: '#fe3c72' }}

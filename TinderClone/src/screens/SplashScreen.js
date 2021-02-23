@@ -2,13 +2,17 @@ import React from 'react';
 import {
     Text, View, Image, StyleSheet, TouchableOpacity
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import AntDesign from "react-native-vector-icons/AntDesign";
 AntDesign.loadFont();
 
 
 const SplashScreen = () => {
+
+    const navigation = useNavigation();
+
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: 'white' }}>
             <Image
                 marginTop={40}
                 source={require("../img/tinderlogo.gif")}
@@ -25,7 +29,9 @@ const SplashScreen = () => {
             </View>
 
             <View style={{ marginTop: 20 }}>
-                <TouchableOpacity style={styles.logIn}>
+                <TouchableOpacity
+                    style={styles.logIn}
+                >
                     <View style={styles.button}>
                         <View style={{ marginLeft: -30 }}>
                             <AntDesign
@@ -37,7 +43,10 @@ const SplashScreen = () => {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.logIn}>
+                <TouchableOpacity
+                    style={styles.logIn}
+                    onPress={() => navigation.navigate("Login")}
+                >
                     <View style={styles.button}>
                         <View style={{ marginLeft: -10 }}>
                             <AntDesign
@@ -64,7 +73,10 @@ const SplashScreen = () => {
 
             </View>
 
-            <TouchableOpacity style={{ height: 40, alignItems: 'center', marginTop: 20 }}>
+            <TouchableOpacity
+                style={{ height: 40, alignItems: 'center', marginTop: 20 }}
+                onPress={() => navigation.navigate("AccRecovery")}
+            >
                 <Text style={{ fontWeight: '700', fontSize: 16 }}>Trouble logging in?</Text>
             </TouchableOpacity>
 
