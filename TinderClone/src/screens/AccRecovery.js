@@ -21,7 +21,7 @@ const AccRecovery = () => {
             <Text style={styles.text2}>Changed your phone number or lost
             your access to your Facebook
             account? We can help you log in
-            with your email. </Text>
+             with your email. </Text>
 
             <View style={styles.textInput}>
                 <TextInput

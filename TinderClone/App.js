@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {
-  Text, View, SafeAreaView
+  SafeAreaView
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -19,14 +19,16 @@ import RootScreen from './src/screens/RootScreen';
 
 
 
+
 export default function App() {
   return (
     <>
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1, }}>
 
         {/* <SpashScreen /> */}
         {/* <LoginScreen /> */}
         {/* <AccRecovery /> */}
+
 
         <NavigationContainer>
           <RootScreen />

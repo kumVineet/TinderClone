@@ -27,30 +27,37 @@ const SplashScreen = () => {
             <View style={{ marginTop: 20 }}>
                 <TouchableOpacity style={styles.logIn}>
                     <View style={styles.button}>
-                        <AntDesign
-                            name="google"
-                            size={22}
-                            color="white" />
-                        <Text style={styles.buttonText}>LOGIN WITH GOOGLE</Text>
+                        <View style={{ marginLeft: -30 }}>
+                            <AntDesign
+                                name="google"
+                                size={22}
+                                color="white" />
+                        </View>
+                        <Text style={[styles.buttonText]}>LOGIN WITH GOOGLE</Text>
                     </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.logIn}>
                     <View style={styles.button}>
-                        <AntDesign
-                            name="message1"
-                            size={22}
-                            color="white" />
-                        <Text style={styles.buttonText}>LOGIN WITH PHONE NUMBER</Text>
+                        <View style={{ marginLeft: -10 }}>
+                            <AntDesign
+                                name="message1"
+                                size={22}
+                                color="white" />
+                        </View>
+                        <Text style={styles.buttonText}>LOGIN WITH PHONE NUMBER </Text>
                     </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.logIn}>
                     <View style={styles.button}>
-                        <AntDesign
-                            name="facebook-square"
-                            size={22}
-                            color="white" />
+                        <View style={{ marginLeft: -30 }}>
+
+                            <AntDesign
+                                name="facebook-square"
+                                size={22}
+                                color="white" />
+                        </View>
                         <Text style={styles.buttonText}>LOGIN WITH FACEBOOK</Text>
                     </View>
                 </TouchableOpacity>
@@ -80,8 +87,8 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         marginHorizontal: 30,
         height: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'space-evenly',
+        // alignItems: 'center',
         borderRadius: 25,
         backgroundColor: "#fe3c72"
     },
@@ -89,7 +96,6 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontWeight: "700",
         fontSize: 18,
-        marginLeft: 50,
     },
     textPrivacy: {
         flexDirection: 'row',
@@ -99,7 +105,8 @@ const styles = StyleSheet.create({
     },
     button: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
+        marginHorizontal: 25
     },
 })
 
