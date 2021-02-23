@@ -42,7 +42,9 @@ const AccRecovery = () => {
                 />
             </View>
 
-            <TouchableOpacity style={styles.logIn}>
+            <TouchableOpacity
+                style={styles.logIn}
+                onPress={() => alert("CHECKOUT YOUR EMAIL")}>
                 <View>
                     <Text style={styles.buttonText}>LOG IN WITH EMAIL </Text>
                 </View>

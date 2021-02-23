@@ -76,7 +76,9 @@ const AboutScreen = () => {
                     <FontAwesome name="times" size={40} color="#F06795"></FontAwesome>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button1}>
+                <TouchableOpacity
+                    style={styles.button1}
+                    onPress={() => alert("YOU GAVE A SUPERLIKE")}>
                     <FontAwesome name="star" size={25} color="blue" />
                 </TouchableOpacity>
 

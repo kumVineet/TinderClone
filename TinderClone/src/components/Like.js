@@ -16,59 +16,63 @@ const Like = () => {
             </View>
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                <ImageBackground
-                    source={{ uri: 'https://images.unsplash.com/photo-1536811145290-bc394643e51e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGN1dGUlMjB3b21hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' }}
-                    imageStyle={{ borderRadius: 10 }}
-                    style={styles.image}
-                    blurRadius={20}>
-                    <Text
-                        style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            position: "absolute", // child
-                            bottom: 20, // position where you want
-                            left: 5
-                        }}
-                    >
-                        Clara</Text>
+                <TouchableOpacity onPress={() => alert("GET TINDER GOLD TO SEE WHO LIKED YOU")}>
+                    <ImageBackground
+                        source={{ uri: 'https://images.unsplash.com/photo-1536811145290-bc394643e51e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGN1dGUlMjB3b21hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' }}
+                        imageStyle={{ borderRadius: 10 }}
+                        style={styles.image}
+                        blurRadius={20}>
+                        <Text
+                            style={{
+                                fontWeight: "bold",
+                                color: "black",
+                                position: "absolute", // child
+                                bottom: 20, // position where you want
+                                left: 5
+                            }}
+                        >
+                            Clara</Text>
 
-                    <Text
-                        style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            position: "absolute", // child
-                            bottom: 5, // position where you want
-                            left: 10
-                        }}
-                    >24</Text>
-                </ImageBackground>
-                <ImageBackground
-                    source={{ uri: 'https://images.unsplash.com/photo-1536811145290-bc394643e51e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGN1dGUlMjB3b21hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' }}
-                    imageStyle={{ borderRadius: 10 }}
-                    style={styles.image}
-                    blurRadius={20}>
-                    <Text
-                        style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            position: "absolute", // child
-                            bottom: 20, // position where you want
-                            left: 5
-                        }}
-                    >
-                        Clara
+                        <Text
+                            style={{
+                                fontWeight: "bold",
+                                color: "black",
+                                position: "absolute", // child
+                                bottom: 5, // position where you want
+                                left: 10
+                            }}
+                        >24</Text>
+                    </ImageBackground>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => alert("GET TINDER GOLD TO KNOW WHO LIKED YOU")}>
+                    <ImageBackground
+                        source={{ uri: 'https://images.unsplash.com/photo-1536811145290-bc394643e51e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGN1dGUlMjB3b21hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' }}
+                        imageStyle={{ borderRadius: 10 }}
+                        style={styles.image}
+                        blurRadius={20}>
+                        <Text
+                            style={{
+                                fontWeight: "bold",
+                                color: "black",
+                                position: "absolute", // child
+                                bottom: 20, // position where you want
+                                left: 5
+                            }}
+                        >
+                            Clara
                     </Text>
 
-                    <Text
-                        style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            position: "absolute", // child
-                            bottom: 5, // position where you want
-                            left: 10
-                        }}
-                    >24</Text>
-                </ImageBackground>
+                        <Text
+                            style={{
+                                fontWeight: "bold",
+                                color: "black",
+                                position: "absolute", // child
+                                bottom: 5, // position where you want
+                                left: 10
+                            }}
+                        >24</Text>
+                    </ImageBackground>
+                </TouchableOpacity>
             </View>
 
             <TouchableOpacity

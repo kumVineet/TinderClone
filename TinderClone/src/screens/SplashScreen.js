@@ -31,6 +31,7 @@ const SplashScreen = () => {
             <View style={{ marginTop: 20 }}>
                 <TouchableOpacity
                     style={styles.logIn}
+                    onPress={() => alert("SIGNED IN WITH GOOGLE")}
                 >
                     <View style={styles.button}>
                         <View style={{ marginLeft: -30 }}>
@@ -58,7 +59,10 @@ const SplashScreen = () => {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.logIn}>
+                <TouchableOpacity
+                    style={styles.logIn}
+                    onPress={() => alert("SIGNED IN WITH FACEBOOK")}
+                >
                     <View style={styles.button}>
                         <View style={{ marginLeft: -30 }}>
 

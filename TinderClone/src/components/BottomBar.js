@@ -12,23 +12,32 @@ const BottomBar = () => {
         <View style={styles.container}>
             <View />
 
-            <TouchableOpacity style={styles.button1}>
+            <TouchableOpacity
+                style={styles.button1}
+                onPress={() => alert("GET TINDER GOLD TO SEE PREVIOUS")}>
                 <FontAwesome name="undo" size={25} color="grey" />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button2} >
+            <TouchableOpacity
+                style={styles.button2}>
                 <FontAwesome name="times" size={40} color="#F06795"></FontAwesome>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button1}>
+            <TouchableOpacity
+                style={styles.button1}
+                onPress={() => alert("YOU GAVE A SUPERLIKE")}>
                 <FontAwesome name="star" size={25} color="blue" />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button2}>
+            <TouchableOpacity
+                style={styles.button2}
+                onPress={() => alert("GET TINDER GOLD")}>
                 <FontAwesome name="heart" size={35} color="#64EDCC" ></FontAwesome>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button1}>
+            <TouchableOpacity
+                style={styles.button1}
+                onPress={() => alert("Sorry you are out of BOOST! Get TINDER GOLD for more BOOST.")}>
                 <MaterialCommunityIcons name="lightning-bolt" size={25} color="purple" />
             </TouchableOpacity>
 
