@@ -1,12 +1,11 @@
 import React from 'react';
 import {
-    Text, View, StyleSheet, TextInput, TouchableOpacity
+    Text, View, StyleSheet, ImageBackground, TouchableOpacity, Dimensions
 } from 'react-native';
 
 
-import Card from '../components/Card';
+import Swipes from '../components/Swipes';
 import BottomBar from '../components/BottomBar';
-
 
 
 const HomeScreen = () => {
@@ -18,7 +17,7 @@ const HomeScreen = () => {
 
             <View style={styles.swipes}>
 
-                <Card />
+                <Swipes />
 
             </View>
 
@@ -29,6 +28,10 @@ const HomeScreen = () => {
 
 
 export default HomeScreen;
+
+
+const DIMENSION_WIDTH = Dimensions.get("window").width;
+const DIMENSION_HEIGHT = Dimensions.get("window").height;
 
 
 const styles = StyleSheet.create({
@@ -49,5 +52,12 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.29,
         shadowRadius: 4.65,
         elevation: 7,
+    },
+
+    bg: {
+        flex: 1,
+        resizeMode: "cover",
+        width: DIMENSION_WIDTH,
+        height: DIMENSION_HEIGHT
     },
 })

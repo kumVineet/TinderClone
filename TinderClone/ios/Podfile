@@ -8,6 +8,7 @@ target 'TinderClone' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+
   target 'TinderCloneTests' do
     inherit! :complete
     # Pods for testing

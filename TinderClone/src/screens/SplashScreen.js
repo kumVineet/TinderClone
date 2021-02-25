@@ -15,7 +15,7 @@ const SplashScreen = () => {
         <View style={{ flex: 1, backgroundColor: 'white' }}>
             <Image
                 marginTop={40}
-                source={require("../img/tinderlogo.gif")}
+                source={require('../assets/images/tinderlogo.gif')}
                 style={styles.logo}
                 resizeMode='stretch'
             />

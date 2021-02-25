@@ -6,10 +6,18 @@ import { useNavigation } from '@react-navigation/native';
 import Ionicons from "react-native-vector-icons/Ionicons";
 Ionicons.loadFont();
 
+import { AuthContext } from '../components/context'
+
 
 const LoginScreen = () => {
 
     const navigation = useNavigation();
+
+    // const { signIn } = React.useContext(AuthContext);
+
+    // const [userNumber, setUserNumber] = React.useState('');
+
+
 
     return (
         <View style={{ flex: 1, backgroundColor: 'white' }}>
@@ -32,7 +40,10 @@ const LoginScreen = () => {
                         width: "70%",
                         height: 35,
                         fontSize: 20,
-                    }} maxLength={13}
+                    }}
+                    placeholder="Your Mobile Number"
+                    // onChangeText={setUserNumber}
+                    maxLength={13}
                     selectionColor="#fe3c72"
                     keyboardType='number-pad'
                     height={60}
@@ -57,7 +68,9 @@ const LoginScreen = () => {
 
             <TouchableOpacity
                 style={styles.logIn}
-                onPress={() => navigation.navigate("RootScreen")}>
+                onPress={() => navigation.navigate("RootScreen")}
+            // onPress={() => signIn({ userNumber })}
+            >
                 <View>
                     <Text style={styles.buttonText}>CONTINUE</Text>
                 </View>

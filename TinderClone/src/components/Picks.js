@@ -1,7 +1,9 @@
 import React from 'react';
 import {
-    Text, View, StyleSheet, TextInput, TouchableOpacity, ImageBackground
+    Text, View, StyleSheet, Alert, TouchableOpacity, FlatList
 } from 'react-native';
+import SmallCard2 from '../components/SmallCard2';
+import { TopPicksScreenPics } from '../assets/data/Pics'
 
 
 const Picks = () => {
@@ -16,121 +18,31 @@ const Picks = () => {
                 >more Top Picks!</Text>
             </View>
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                <ImageBackground
-                    source={{ uri: 'https://images.unsplash.com/photo-1536811145290-bc394643e51e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGN1dGUlMjB3b21hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' }}
-                    imageStyle={{ borderRadius: 10 }}
-                    style={styles.image}>
-                    <Text
-                        style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            position: "absolute",
-                            bottom: 20,
-                            left: 5
-                        }}
-                    >
-                        Clara</Text>
+            <View >
+                <View >
+                    <FlatList
+                        numColumns={2}
+                        data={TopPicksScreenPics}
+                        keyExtractor={(item, index) => index.toString()}
+                        renderItem={({ item }) => (
+                            <TouchableOpacity>
+                                <SmallCard2
+                                    PicksDetail={item}
+                                />
+                            </TouchableOpacity>
+                        )}
+                    />
 
-                    <Text
-                        style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            position: "absolute",
-                            bottom: 5,
-                            left: 10
-                        }}
-                    >24</Text>
-                </ImageBackground>
-                <ImageBackground
-                    source={{ uri: 'https://images.unsplash.com/photo-1536811145290-bc394643e51e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGN1dGUlMjB3b21hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' }}
-                    imageStyle={{ borderRadius: 10 }}
-                    style={styles.image}>
-                    <Text
-                        style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            position: "absolute",
-                            bottom: 20,
-                            left: 5
-                        }}
-                    >
-                        Clara
-                    </Text>
-
-                    <Text
-                        style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            position: "absolute",
-                            bottom: 5,
-                            left: 10
-                        }}
-                    >24</Text>
-                </ImageBackground>
-            </View>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                <ImageBackground
-                    source={{ uri: 'https://images.unsplash.com/photo-1536811145290-bc394643e51e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGN1dGUlMjB3b21hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' }}
-                    imageStyle={{ borderRadius: 10 }}
-                    style={styles.image}>
-                    <Text
-                        style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            position: "absolute",
-                            bottom: 20,
-                            left: 5
-                        }}
-                    >
-                        Clara</Text>
-
-                    <Text
-                        style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            position: "absolute",
-                            bottom: 5,
-                            left: 10
-                        }}
-                    >24</Text>
-                </ImageBackground>
-                <ImageBackground
-                    source={{ uri: 'https://images.unsplash.com/photo-1536811145290-bc394643e51e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGN1dGUlMjB3b21hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' }}
-                    imageStyle={{ borderRadius: 10 }}
-                    style={styles.image}>
-                    <Text
-                        style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            position: "absolute",
-                            bottom: 20,
-                            left: 5
-                        }}
-                    >
-                        Clara
-                    </Text>
-
-                    <Text
-                        style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            position: "absolute",
-                            bottom: 5,
-                            left: 10
-                        }}
-                    >24</Text>
-                </ImageBackground>
-            </View>
-
-            <TouchableOpacity
-                onPress={() => alert("GET TINDER GOLD")}>
-                <View style={styles.button}>
-                    <Text
-                        style={{ color: 'white', fontWeight: 'bold', fontSize: 20 }}
-                    >UNLOCK TOP PICKS</Text>
+                    <TouchableOpacity style={styles.button}
+                        onPress={() => Alert.alert("GET TINDER GOLD")}>
+                        <View >
+                            <Text
+                                style={{ color: 'white', fontWeight: 'bold', fontSize: 20 }}
+                            >UNLOCK TOP PICKS</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
-            </TouchableOpacity>
+            </View>
 
         </View>
     )
@@ -143,23 +55,18 @@ const styles = StyleSheet.create({
         marginTop: 30,
         marginHorizontal: 60,
         alignItems: 'center',
-
-    },
-    image: {
-        width: 180,
-        height: 240,
-        marginTop: 30,
-        borderRadius: 10,
-        position: "relative",
-        marginBottom: 15,
+        marginBottom: 20
     },
     button: {
         backgroundColor: '#FFD700',
-        marginHorizontal: 70,
-        marginVertical: 10,
+        width: 250,
         height: 55,
         borderRadius: 27,
         justifyContent: 'center',
         alignItems: 'center',
+        position: 'absolute',
+        left: 80,
+        bottom: 235
+
     },
 })

@@ -7,15 +7,19 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 FontAwesome.loadFont();
 
 
-const AboutScreen = () => {
+const AboutScreen = ({ route, navigation }) => {
 
-    const navigation = useNavigation();
+    // const navigation = useNavigation();
+
+    const { Details } = route.params
+    console.log(Details)
 
     return (
         <View style={{ backgroundColor: 'white' }}>
             <View>
                 <Image
-                    source={{ uri: "https://images.unsplash.com/photo-1594886761101-49c80b0c57a0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjB8fGN1dGUlMjB3b21hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" }}
+                    // source={{ uri: "https://images.unsplash.com/photo-1594886761101-49c80b0c57a0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjB8fGN1dGUlMjB3b21hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" }}
+                    source={Details.pic}
                     style={styles.image}
                 />
                 <TouchableOpacity style={styles.button} onPress={() => navigation.goBack()}>
@@ -27,20 +31,20 @@ const AboutScreen = () => {
 
             <View style={{ borderBottomWidth: 0.3, padding: 10, }}>
                 <View style={styles.textRow}>
-                    <Text style={[styles.textPrimary, styles.textShadow]}>Remy_Loz</Text>
-                    <Text style={[styles.textSecondary, styles.textShadow]}> 24</Text>
+                    <Text style={[styles.textPrimary, styles.textShadow]}>{Details.title}</Text>
+                    <Text style={[styles.textSecondary, styles.textShadow]}>{Details.age}</Text>
                 </View>
                 <View style={styles.textRow2}>
                     <FontAwesome name="graduation-cap" size={18} color="black" />
-                    <Text style={styles.texttertiary}>School/University</Text>
+                    <Text style={styles.texttertiary}>{Details.college}</Text>
                 </View>
                 <View style={styles.textRow2}>
                     <FontAwesome name="home" size={18} color="black" />
-                    <Text style={styles.texttertiary}> Address</Text>
+                    <Text style={styles.texttertiary}> {Details.city}</Text>
                 </View>
                 <View style={styles.textRow2}>
                     <FontAwesome name="map-marker" size={18} color="black" />
-                    <Text style={styles.texttertiary}>  22 miles away</Text>
+                    <Text style={styles.texttertiary}>  {Details.caption}</Text>
                 </View>
             </View>
 
@@ -49,9 +53,10 @@ const AboutScreen = () => {
                     style={{
                         color: '#fe3c72',
                         fontWeight: 'bold',
-                        fontSize: 18
+                        fontSize: 18,
+
                     }}
-                >SHARE REMY'S PROFILE</Text>
+                >SHARE {Details.title} PROFILE</Text>
                 <Text
                     style={{
                         color: '#fe3c72',
@@ -68,7 +73,7 @@ const AboutScreen = () => {
                         fontWeight: '600',
                         fontSize: 17
                     }}
-                >REPORT REMY</Text>
+                >REPORT {Details.title}</Text>
             </View>
 
             <View style={styles.container}>

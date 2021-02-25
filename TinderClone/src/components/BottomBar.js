@@ -1,6 +1,5 @@
 import React from 'react'
-import { Touchable } from 'react-native';
-import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, Alert } from 'react-native';
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 FontAwesome.loadFont();
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -14,7 +13,7 @@ const BottomBar = () => {
 
             <TouchableOpacity
                 style={styles.button1}
-                onPress={() => alert("GET TINDER GOLD TO SEE PREVIOUS")}>
+                onPress={() => Alert.alert("GET TINDER GOLD TO SEE PREVIOUS")}>
                 <FontAwesome name="undo" size={25} color="grey" />
             </TouchableOpacity>
 
@@ -25,19 +24,20 @@ const BottomBar = () => {
 
             <TouchableOpacity
                 style={styles.button1}
-                onPress={() => alert("YOU GAVE A SUPERLIKE")}>
+                onPress={() => Alert.alert("YOU GAVE A SUPERLIKE")}>
                 <FontAwesome name="star" size={25} color="blue" />
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={styles.button2}
-                onPress={() => alert("GET TINDER GOLD")}>
+            // onPress={() => Alert.alert("GET TINDER GOLD")}
+            >
                 <FontAwesome name="heart" size={35} color="#64EDCC" ></FontAwesome>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={styles.button1}
-                onPress={() => alert("Sorry you are out of BOOST! Get TINDER GOLD for more BOOST.")}>
+                onPress={() => Alert.alert("Sorry you are out of BOOST! Get TINDER GOLD for more BOOST.")}>
                 <MaterialCommunityIcons name="lightning-bolt" size={25} color="purple" />
             </TouchableOpacity>
 

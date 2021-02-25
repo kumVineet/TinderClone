@@ -12,7 +12,7 @@ Ionicons.loadFont();
 
 import HomeScreen from './HomeScreen';
 import LikeScreen from './LikeScreen';
-import MatchScreen from './MatchScreen';
+import MessageScreen from './MessageScreen';
 import ProfileScreen from './ProfileScreen';
 
 const Tab = createMaterialTopTabNavigator();
@@ -57,7 +57,7 @@ const RootScreen = () => {
             />
             <Tab.Screen
                 name="   "
-                component={MatchScreen}
+                component={MessageScreen}
                 options={{
                     tabBarIcon: ({ focused }) =>
                         focused ? <Ionicons name="chatbox-ellipses" size={22} color="#fe3c72" /> :
