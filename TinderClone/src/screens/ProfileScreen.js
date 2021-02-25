@@ -162,7 +162,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     plus: {
-        // marginVertical: 130,
         marginHorizontal: 65,
         height: 60,
         width: 280,

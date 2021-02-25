@@ -32,8 +32,6 @@ const RootScreen = () => {
                 },
                 style: {
                     height: 50,
-                    // backgroundColor: 'transparent',
-                    // borderColor: 'transparent'
                 }
             }}
         >

@@ -30,7 +30,6 @@ const BottomBar = () => {
 
             <TouchableOpacity
                 style={styles.button2}
-            // onPress={() => Alert.alert("GET TINDER GOLD")}
             >
                 <FontAwesome name="heart" size={35} color="#64EDCC" ></FontAwesome>
             </TouchableOpacity>

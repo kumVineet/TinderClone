@@ -12,13 +12,11 @@ const AboutScreen = ({ route, navigation }) => {
     // const navigation = useNavigation();
 
     const { Details } = route.params
-    console.log(Details)
 
     return (
         <View style={{ backgroundColor: 'white' }}>
             <View>
                 <Image
-                    // source={{ uri: "https://images.unsplash.com/photo-1594886761101-49c80b0c57a0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjB8fGN1dGUlMjB3b21hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" }}
                     source={Details.pic}
                     style={styles.image}
                 />
@@ -100,7 +98,6 @@ export default AboutScreen;
 
 const styles = StyleSheet.create({
     image: {
-        // resizeMode: 'cover',
         width: '100%',
         height: 450,
         justifyContent: 'center'

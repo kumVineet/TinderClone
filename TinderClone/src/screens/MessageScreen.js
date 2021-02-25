@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Text, View, StyleSheet, TextInput, TouchableOpacity, FlatList, ScrollView
+    Text, View, StyleSheet, TextInput, TouchableOpacity, FlatList,
 } from 'react-native';
 import Ionicons from "react-native-vector-icons/Ionicons";
 Ionicons.loadFont();
@@ -52,11 +52,6 @@ const MessageScreen = () => {
 
             <Text style={styles.text}>Messages</Text>
 
-            {/* <Message />
-            <Message />
-            <Message />
-            <Message />
-            <Message /> */}
 
             <FlatList
                 data={Messages}
@@ -90,7 +85,6 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         borderBottomColor: "#fe3c72",
         borderBottomWidth: 2,
-        // backgroundColor: 'red'
     },
     text: {
         fontWeight: '700',
@@ -104,6 +98,4 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         marginTop: 10,
     },
-
-
 })

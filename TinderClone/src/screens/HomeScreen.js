@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Text, View, StyleSheet, ImageBackground, TouchableOpacity, Dimensions
+    View, StyleSheet, Dimensions
 } from 'react-native';
 
 

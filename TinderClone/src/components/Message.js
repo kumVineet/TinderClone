@@ -1,13 +1,12 @@
 import React from 'react';
 import {
-    Text, View, StyleSheet, TextInput, TouchableOpacity
+    Text, View, StyleSheet,
 } from 'react-native';
 
 import Minicard from '../components/Minicard';
-import Messages from '../assets/data/Messages';
 
 const Message = ({ Details }) => {
-    // console.log("abc", Details.title)
+
 
     return (
         <View style={styles.message}>

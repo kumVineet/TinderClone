@@ -24,10 +24,12 @@ const AccRecovery = () => {
 
             <Text style={styles.text1}>Account Recovery</Text>
 
-            <Text style={styles.text2}>Changed your phone number or lost
-            your access to your Facebook
-            account? We can help you log in
-             with your email. </Text>
+            <View style={{ marginTop: 40, alignItems: 'center' }}>
+                <Text style={styles.text2}>Changed your phone number or lost</Text>
+                <Text style={styles.text2}>your access to your Facebook</Text>
+                <Text style={styles.text2}>account? We can help you log in</Text>
+                <Text style={styles.text2}> with your email. </Text>
+            </View>
 
             <View style={styles.textInput}>
                 <TextInput
@@ -36,6 +38,7 @@ const AccRecovery = () => {
                         height: 35,
                         fontSize: 20,
                     }}
+                    placeholder='  Email'
                     selectionColor="#fe3c72"
                     keyboardType='default'
                     height={60}
@@ -94,7 +97,6 @@ const styles = StyleSheet.create({
         fontWeight: '700'
     },
     text2: {
-        marginTop: 40,
         marginHorizontal: 36,
         fontSize: 22,
         fontWeight: '300',

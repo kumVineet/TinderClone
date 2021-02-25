@@ -104,7 +104,6 @@ const styles = StyleSheet.create({
         marginHorizontal: 30,
         height: 50,
         justifyContent: 'space-evenly',
-        // alignItems: 'center',
         borderRadius: 25,
         backgroundColor: "#fe3c72"
     },
