@@ -27,101 +27,98 @@ const Stack = createStackNavigator()
 export default function App() {
 
 
-  // const initialLoginState = {
-  //   isLoading: true,
-  //   userNumber: null,
-  //   userToken: null,
-  // };
+  const initialLoginState = {
+    isLoading: true,
+    userNumber: null,
+    userToken: null,
+  };
 
 
-  // const loginReducer = (prevState, action) => {
-  //   switch (action.type) {
-  //     case 'RETRIEVE_TOKEN':
-  //       return {
-  //         ...prevState,
-  //         userToken: action.token,
-  //         isLoading: false,
-  //       };
+  const loginReducer = (prevState, action) => {
+    switch (action.type) {
+      case 'RETRIEVE_TOKEN':
+        return {
+          ...prevState,
+          userToken: action.token,
+          isLoading: false,
+        };
 
-  //     case 'LOGIN':
-  //       return {
-  //         ...prevState,
-  //         userNumber: action.id,
-  //         userToken: action.token,
-  //         isLoading: false,
-  //       };
+      case 'LOGIN':
+        return {
+          ...prevState,
+          userNumber: action.id,
+          userToken: action.token,
+          isLoading: false,
+        };
 
-  //     case 'LOGOUT':
-  //       return {
-  //         ...prevState,
-  //         userNumber: null,
-  //         userToken: null,
-  //         isLoading: false,
-  //       };
-  //   }
-  // };
+      case 'LOGOUT':
+        return {
+          ...prevState,
+          userNumber: null,
+          userToken: null,
+          isLoading: false,
+        };
+    }
+  };
 
-
-  // const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
-
-
-  // const authContext = React.useMemo(() => ({
-
-  //   signIn: (userNumber) => {
-
-  //     let userToken = null;
-  //     // userToken = null;
-  //     console.log(userNumber);
-  //     if (userNumber != null && userNumber === "9557978166") {
-  //       userToken = 'dfgdfg';
-  //       setTimeout(async () => { await AsyncStorage.setItem('userToken', userToken) }, 100)
-  //     } else {
-  //       Alert.alert("Login not successfull")
-  //     }
-  //     dispatch({ type: 'LOGIN', id: userNumber, token: userToken });
-  //   },
+  const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
 
 
-  //   // signOut: async () => {
+  const authContext = React.useMemo(() => ({
 
-  //   //   console.log("HI");
-  //   //   try {
-  //   //     await AsyncStorage.removeItem('userToken');
-  //   //   } catch (error) {
-  //   //     console.log(error);
-  //   //   }
-  //   //   dispatch({ type: 'LOGOUT' });
-  //   // }
-  //   // }), []);
+    signIn: async (userNumber) => {
 
-
-  //   useEffect(() => {
-  //   setTimeout(async () => {
-
-  //     let userToken;
-  //     userToken = null;
-  //     try {
-  //       userToken = await AsyncStorage.getItem('userToken');
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //     dispatch({ type: 'RETRIEVE_TOKEN', token: userToken });
-  //   }, 1000);
-  // }, []);
+      let userToken;
+      userToken = null;
+      console.log(userNumber);
+      if (userNumber == '9557978166') {
+        userToken = 'dfgdfg';
+        await AsyncStorage.setItem('userToken', userToken);
+      } else {
+        Alert.alert("Login not successfull")
+      }
+      dispatch({ type: 'LOGIN', id: userNumber, token: userToken });
+    },
 
 
-  // if (loginState.isLoading) {
-  //   return (
-  //     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-  //       <ActivityIndicator size='large' color='#fe3c72' />
-  //     </View>
-  //   )
-  // }
+    signOut: async (userToken) => {
+      try {
+        await AsyncStorage.removeItem('userToken');
+      } catch (error) {
+        console.log(error);
+      }
+      dispatch({ type: 'LOGOUT' });
+    }
+  }), []);
+
+
+  useEffect(() => {
+    setTimeout(async () => {
+
+      let userToken;
+      userToken = null;
+      try {
+        userToken = await AsyncStorage.getItem('userToken');
+      } catch (error) {
+        console.log(error);
+      }
+      dispatch({ type: 'RETRIEVE_TOKEN', token: userToken });
+    }, 1000);
+  }, []);
+
+
+  if (loginState.isLoading) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ActivityIndicator size='large' color='#fe3c72' />
+      </View>
+    )
+  }
 
 
   return (
     <>
-      {/* <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1 }}>
         <AuthContext.Provider value={authContext}>
           <NavigationContainer>
             <Stack.Navigator headerMode="none">
@@ -141,21 +138,7 @@ export default function App() {
             </Stack.Navigator>
           </NavigationContainer>
         </AuthContext.Provider>
-      </SafeAreaView> */}
-
-      <SafeAreaView style={{ flex: 1 }}>
-        <NavigationContainer>
-          <Stack.Navigator headerMode="none">
-            <Stack.Screen name="Splash" component={SplashScreen} />
-            <Stack.Screen name="Login" component={LoginScreen} />
-            <Stack.Screen name="AccRecovery" component={AccRecovery} />
-            <Stack.Screen name="RootScreen" component={RootScreen} />
-            <Stack.Screen name="About" component={AboutScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
       </SafeAreaView>
-
-
     </>
   );
 };

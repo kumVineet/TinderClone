@@ -13,22 +13,28 @@ const BottomBar = () => {
 
             <TouchableOpacity
                 style={styles.button1}
-                onPress={() => Alert.alert("GET TINDER GOLD TO SEE PREVIOUS")}>
+                onPress={() => { this.swiper.goBackFromLeft() }}
+            // onPress={() => Alert.alert("GET TINDER GOLD TO SEE PREVIOUS")}
+            >
                 <FontAwesome name="undo" size={25} color="grey" />
             </TouchableOpacity>
 
             <TouchableOpacity
+                onPress={() => { this.swiper.swipeLeft() }}
                 style={styles.button2}>
                 <FontAwesome name="times" size={40} color="#F06795"></FontAwesome>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={styles.button1}
-                onPress={() => Alert.alert("YOU GAVE A SUPERLIKE")}>
+                onPress={() => { this.swiper.swipeTop() }}
+                onPressIn={() => Alert.alert("YOU GAVE A SUPERLIKE")}
+            >
                 <FontAwesome name="star" size={25} color="blue" />
             </TouchableOpacity>
 
             <TouchableOpacity
+                onPress={() => { this.swiper.swipeRight() }}
                 style={styles.button2}
             >
                 <FontAwesome name="heart" size={35} color="#64EDCC" ></FontAwesome>
@@ -36,7 +42,7 @@ const BottomBar = () => {
 
             <TouchableOpacity
                 style={styles.button1}
-                onPress={() => Alert.alert("Sorry you are out of BOOST! Get TINDER GOLD for more BOOST.")}>
+                onPress={() => Alert.alert("SORRY YOU ARE OUT OF BOOST! GET TINDER GOLD FOR MORE BOOST.")}>
                 <MaterialCommunityIcons name="lightning-bolt" size={25} color="purple" />
             </TouchableOpacity>
 

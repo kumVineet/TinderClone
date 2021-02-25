@@ -22,7 +22,7 @@ const ProfileScreen = () => {
 
     const navigation = useNavigation();
 
-    // const { signOut } = React.useContext(AuthContext);
+    const { signOut } = React.useContext(AuthContext);
 
     return (
         <View style={{ flex: 1, backgroundColor: 'white' }}>
@@ -97,8 +97,8 @@ const ProfileScreen = () => {
 
             <View style={styles.plus}>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate("Splash")}
-                // onPress={() => { signOut() }}
+                    // onPress={() => navigation.navigate("Splash")}
+                    onPress={() => { signOut() }}
                 >
                     <Text
                         style={{ fontWeight: 'bold', fontSize: 22, color: '#fe3c72' }}

@@ -2,14 +2,12 @@ import React from 'react';
 import {
     Text, View, StyleSheet, Image, TouchableOpacity
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 FontAwesome.loadFont();
 
 
 const AboutScreen = ({ route, navigation }) => {
 
-    // const navigation = useNavigation();
 
     const { Details } = route.params
 
@@ -75,17 +73,24 @@ const AboutScreen = ({ route, navigation }) => {
             </View>
 
             <View style={styles.container}>
-                <TouchableOpacity style={styles.button2} >
+                <TouchableOpacity
+                    onPressIn={() => navigation.goBack()}
+                    onPress={() => { this.swiper.swipeLeft() }}
+                    style={styles.button2} >
                     <FontAwesome name="times" size={40} color="#F06795"></FontAwesome>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={styles.button1}
-                    onPress={() => alert("YOU GAVE A SUPERLIKE")}>
+                    onPressIn={() => navigation.goBack()}
+                    onPress={() => { this.swiper.swipeTop() }}>
                     <FontAwesome name="star" size={25} color="blue" />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button2}>
+                <TouchableOpacity
+                    style={styles.button2}
+                    onPressIn={() => navigation.goBack()}
+                    onPress={() => { this.swiper.swipeRight() }}>
                     <FontAwesome name="heart" size={35} color="#64EDCC" ></FontAwesome>
                 </TouchableOpacity>
             </View>

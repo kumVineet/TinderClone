@@ -13,11 +13,14 @@ const LoginScreen = () => {
 
     const navigation = useNavigation();
 
-    // const { signIn } = React.useContext(AuthContext);
+    const { signIn } = React.useContext(AuthContext);
 
-    // const [userNumber, setUserNumber] = React.useState('');
+    const [userNumber, setUserNumber] = React.useState('');
 
+    const logIn = (userNumber) => {
 
+        signIn(userNumber);
+    }
 
     return (
         <View style={{ flex: 1, backgroundColor: 'white' }}>
@@ -42,7 +45,7 @@ const LoginScreen = () => {
                         fontSize: 20,
                     }}
                     placeholder="Your Mobile Number"
-                    // onChangeText={setUserNumber}
+                    onChangeText={setUserNumber}
                     maxLength={13}
                     selectionColor="#fe3c72"
                     keyboardType='number-pad'
@@ -68,8 +71,7 @@ const LoginScreen = () => {
 
             <TouchableOpacity
                 style={styles.logIn}
-                onPress={() => navigation.navigate("RootScreen")}
-            // onPress={() => signIn({ userNumber })}
+                onPress={() => logIn(userNumber)}
             >
                 <View>
                     <Text style={styles.buttonText}>CONTINUE</Text>
