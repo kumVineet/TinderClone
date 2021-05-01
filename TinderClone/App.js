@@ -70,7 +70,6 @@ export default function App() {
 
       let userToken;
       userToken = null;
-      console.log(userNumber);
       if (userNumber == '9557978166') {
         userToken = 'dfgdfg';
         await AsyncStorage.setItem('userToken', userToken);

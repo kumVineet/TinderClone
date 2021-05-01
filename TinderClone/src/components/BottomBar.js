@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, TouchableOpacity, View, Alert } from 'react-native';
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 FontAwesome.loadFont();
@@ -6,7 +6,27 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 MaterialCommunityIcons.loadFont();
 
 
+
 const BottomBar = () => {
+
+
+    const [count, setCount] = useState(0)
+
+
+    useEffect(() => {
+
+        let myTimeout = setTimeout((count) => {
+            if (!count++) {
+                Alert.alert('SWIPE RIGHT TO KNOW MORE')
+            }
+        }, 10000);
+        return () => {
+            clearTimeout(myTimeout);
+        };
+    }, [count])
+
+
+
     return (
         <View style={styles.container}>
             <View />
@@ -14,13 +34,14 @@ const BottomBar = () => {
             <TouchableOpacity
                 style={styles.button1}
                 onPress={() => { this.swiper.goBackFromLeft() }}
-            // onPress={() => Alert.alert("GET TINDER GOLD TO SEE PREVIOUS")}
+                onPressIn={() => setCount(count + 1)}
             >
                 <FontAwesome name="undo" size={25} color="grey" />
             </TouchableOpacity>
 
             <TouchableOpacity
                 onPress={() => { this.swiper.swipeLeft() }}
+                onPressIn={() => setCount(count + 1)}
                 style={styles.button2}>
                 <FontAwesome name="times" size={40} color="#F06795"></FontAwesome>
             </TouchableOpacity>
@@ -28,13 +49,14 @@ const BottomBar = () => {
             <TouchableOpacity
                 style={styles.button1}
                 onPress={() => { this.swiper.swipeTop() }}
-                onPressIn={() => Alert.alert("YOU GAVE A SUPERLIKE")}
+                onPressIn={() => setCount(count + 1)}
             >
                 <FontAwesome name="star" size={25} color="blue" />
             </TouchableOpacity>
 
             <TouchableOpacity
                 onPress={() => { this.swiper.swipeRight() }}
+                onPressIn={() => setCount(count + 1)}
                 style={styles.button2}
             >
                 <FontAwesome name="heart" size={35} color="#64EDCC" ></FontAwesome>
@@ -42,7 +64,8 @@ const BottomBar = () => {
 
             <TouchableOpacity
                 style={styles.button1}
-                onPress={() => Alert.alert("SORRY YOU ARE OUT OF BOOST! GET TINDER GOLD FOR MORE BOOST.")}>
+                onPress={() => Alert.alert("SORRY YOU ARE OUT OF BOOST! GET TINDER GOLD FOR MORE BOOST.")}
+            >
                 <MaterialCommunityIcons name="lightning-bolt" size={25} color="purple" />
             </TouchableOpacity>
 
